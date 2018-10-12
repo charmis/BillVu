@@ -8,4 +8,4 @@ install:
 
 script:
  - dotnet build
- - docker build -t BillVu.WebApi .
+ - docker build -t billvu.webapi .
