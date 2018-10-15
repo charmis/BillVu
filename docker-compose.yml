@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  webapi:
+    # build using Dockerfile of webapi project
+    build: ./src/WebApi/BillVu.WebApi
+    ports:
+     - "5000:5001"
+    container_name: billvu.webapi
+  spa:
+    # build using Dockerfile of spa project
+    build: ./src/SPA/billvu-spa
+    ports:
+      - "4999:4999"
+    volumes:
+      - '.:/usr/src/app'
+      - '/usr/src/app/node_modules'
+    container_name: billvu.spa
