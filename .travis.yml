@@ -3,9 +3,20 @@ solution: BillVu.sln
 mono: none
 dotnet: 2.1.403
 
+# execute all of the commands which need to be executed before installing dependencies
+before-install:
+ - docker-compose --version
+
+# install all of the needed dependencies
 install:
 - dotnet restore
 
+# execute all of the commands which need to be executed before running actual tests
+before_script:
+  - docker-compose up --build -d
+
+# execute all of the commands which should make the build pass or fail
 script:
- - dotnet build
- - docker build -t billvu.webapi .
+# - dotnet build
+# - docker build -t billvu.webapi .
+  - docker-compose build
