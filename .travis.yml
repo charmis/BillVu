@@ -21,4 +21,14 @@ before_script:
 script:
 # - dotnet build
 # - docker build -t billvu.webapi .
-  - docker-compose build
+#  - docker-compose build
+after_success:
+  - docker --version  # document the version travis is using
+  - pip install --user awscli # install aws cli w/o sudo
+  - export PATH=$PATH:$HOME/.local/bin # put aws in the path
+  - eval $(aws ecr get-login --no-include-email --region us-east-1) #needs AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY envvars
+  #- docker build -t my_example_app .
+  - docker tag billvu_spa:latest $AWS_ACCOUNT/billvu_spa:latest
+  - docker push $AWS_ACCOUNT/billvu_spa:latest
+  - docker tag billvu_webapi:latest $AWS_ACCOUNT/billvu_webapi:latest
+  - docker push $AWS_ACCOUNT/billvu_webapi:latest
