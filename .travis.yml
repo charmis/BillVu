@@ -13,6 +13,8 @@ install:
 
 # execute all of the commands which need to be executed before running actual tests
 before_script:
+  - docker --version
+  - docker-compose --version
   - docker-compose up --build -d
 
 # execute all of the commands which should make the build pass or fail
