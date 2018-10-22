@@ -9,6 +9,9 @@ namespace BillVu.WebApi.Models
 {
     public class Bill
     {
+        [Required]
+        public Guid Id { get; set; }
+
         [Key, Column(Order = 0)]
         public string Name { get; set; }
 
