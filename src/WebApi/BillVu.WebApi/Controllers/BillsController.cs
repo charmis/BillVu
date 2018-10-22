@@ -18,11 +18,17 @@ namespace BillVu.WebApi.Controllers
 
         public BillsController(BillVuDbContext context)
         {
+            if(context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
             _context = context;
         }
 
         // GET: api/Bills
         [HttpGet]
+        [ProducesResponseType(200)]
         public IEnumerable<Bill> GetBills()
         {
             return _context.Bills;
@@ -30,14 +36,19 @@ namespace BillVu.WebApi.Controllers
 
         // GET: api/Bills/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetBill([FromRoute] string id)
+        public IActionResult GetBill([FromRoute] string id)
         {
+            if(!Guid.TryParse(id, out Guid billId))
+            {
+                throw new ArgumentException($"Invalid value in {nameof(id)}");
+            }
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var bill = await _context.Bills.FindAsync(id);
+            var bill = _context.Bills.SingleOrDefault(b => b.Id == billId);
 
             if (bill == null)
             {
@@ -49,6 +60,7 @@ namespace BillVu.WebApi.Controllers
 
         // PUT: api/Bills/5
         [HttpPut("{id}")]
+        [ProducesResponseType(404)]
         public async Task<IActionResult> PutBill([FromRoute] string id, [FromBody] Bill bill)
         {
             if (!ModelState.IsValid)
