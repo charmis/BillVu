@@ -3,9 +3,16 @@ solution: BillVu.sln
 mono: none
 dotnet: 2.1.403
 
+addons:
+  sonarcloud:
+    organization: "charmis-github"
+    token: 
+      secure: $SONAR_TOKEN
+
 install:
 - dotnet restore
 
 script:
+ - sonar-scanner
  - dotnet build
  - docker build -t billvu.webapi .
