@@ -4,13 +4,13 @@
 
 [![Code smells](https://sonarcloud.io/api/project_badges/measure?project=charmis_BillVu&metric=code_smells)](https://sonarcloud.io/component_measures?id=charmis_BillVu&metric=code_smells)
 
-[![Open issues](https://sonarcloud.io/api/project_badges/measure?project=charmis_BillVu&metric=open_issues)](https://sonarcloud.io/component_measures?id=charmis_BillVu&metric=open_issues)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=charmis_BillVu&metric=security_rating)](https://sonarcloud.io/component_measures?id=charmis_BillVu&metric=security_rating)
 
 [![Technical debt](https://sonarcloud.io/api/project_badges/measure?project=charmis_BillVu&metric=sqale_index)](https://sonarcloud.io/component_measures?id=charmis_BillVu&metric=sqale_index)
-
+         
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=charmis_BillVu&metric=bugs)](https://sonarcloud.io/component_measures?id=charmis_BillVu&metric=bugs)
 
-[![Reliability remediation effort](https://sonarcloud.io/api/project_badges/measure?project=charmis_BillVu&metric=reliability_remediation_effort)](https://sonarcloud.io/component_measures?id=charmis_BillVu&metric=reliability_remediation_effort)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=charmis_BillVu&metric=reliability_rating)](https://sonarcloud.io/component_measures?id=charmis_BillVu&metric=reliability_rating)
 
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=charmis_BillVu&metric=coverage)](https://sonarcloud.io/component_measures?id=charmis_BillVu&metric=coverage)
 
