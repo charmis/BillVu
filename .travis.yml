@@ -25,5 +25,6 @@ before_script:
 script:
 # - dotnet build
 # - docker build -t billvu.webapi .
+  - dotnet test src/WebApi/BillVu.WebApi.Test/BillVu.WebApi.Test.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
   - sonar-scanner
   - docker-compose build
