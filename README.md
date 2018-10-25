@@ -1,3 +1,6 @@
+API - ASP.NET Core 
+Front End - Angular
+
 [![Build Status](https://travis-ci.com/charmis/BillVu.svg?branch=master)](https://travis-ci.com/charmis/BillVu)
 
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=charmis_BillVu&metric=alert_status)](https://sonarcloud.io/dashboard/index/charmis_BillVu)
